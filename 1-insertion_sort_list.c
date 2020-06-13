@@ -8,9 +8,17 @@
 
 void insertion_sort_list(listint_t **list)
 {
+    const int temp_int;
+
     while (list != NULL)
     {
-        print_list(*list);
-        (*list) = (*list)->next;
+        if ((*list)->n < (*list)->next->n)
+        {
+            temp_int = (*list)->n;
+            (*list)->n = (*list)->next->n;
+            (*list)->next->n = temp_int;
+            print_list(*list);
+        }
+        temp_head = temp_head->next;
     }
 }
