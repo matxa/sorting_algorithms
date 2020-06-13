@@ -16,7 +16,7 @@ void bubble_sort(int *array, size_t size)
 	if (size != size_of_a)
 	{
 		printf("BYE");
-		exit(1)
+		exit(1);
 	}
 
 	if (size < 1)
