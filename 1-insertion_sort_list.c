@@ -11,7 +11,7 @@ void insertion_sort_list(listint_t **list)
     listint_t **temp_list = list;
     listint_t **temp_to_replace;
 
-    while (list->next != NULL)
+    while ((*list)->next != NULL)
     {
         if ((*temp_list)->n > (*temp_list)->next->n) && (*temp_list)->prev->n) < (*temp_list)->n)
         {
