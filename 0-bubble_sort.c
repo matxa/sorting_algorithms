@@ -11,7 +11,7 @@ void bubble_sort(int *array, size_t size)
 	size_t a;
 	size_t b;
 	int temp;
-	size_t size_of_a = sizeof(*array) * sizeof(array[0]);
+	size_t size_of_a = sizeof(*array) * 4;
     printf("size of array in b_s %lu\nsize is %lu\n", size_of_a, size);
 
 	if (size != size_of_a)
