@@ -19,6 +19,6 @@ void insertion_sort_list(listint_t **list)
             (*list)->next->n = temp_int;
             print_list(*list);
         }
-        temp_head = temp_head->next;
+        (*list) = (*list)->next;
     }
 }
