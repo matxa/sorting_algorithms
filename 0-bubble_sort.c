@@ -19,7 +19,7 @@ void bubble_sort(int *array, size_t size)
 		exit(1);
 	}
 
-	if (size < 1)
+	if (size > 1)
 	{
 		for (a = 0; a < size; a++)
 		{
