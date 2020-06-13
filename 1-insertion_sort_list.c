@@ -8,16 +8,15 @@
 
 void insertion_sort_list(listint_t **list)
 {
-    listint_t temp_head = list;
     const int temp_int;
 
-    while (temp_head != NULL)
+    while (list != NULL)
     {
-        if (temp_head->n < temp_head->next->n)
+        if (list->n < list->next->n)
         {
-            temp_int = temp_head->n;
-            temp_head->n = temp_head->next->n;
-            temp_head->next->n = temp_int;
+            temp_int = list->n;
+            list->n = list->next->n;
+            list->next->n = temp_int;
             print_list(*list);
         }
         temp_head = temp_head->next;
