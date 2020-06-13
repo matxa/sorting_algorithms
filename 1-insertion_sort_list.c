@@ -9,7 +9,7 @@
 void insertion_sort_list(listint_t **list)
 {
     listint_t **temp_list = list;
-    listint_t **temp_to_replace;
+    listint_t **temp_to_replace = NULL;
 
     while ((*list)->next != NULL)
     {
@@ -17,7 +17,7 @@ void insertion_sort_list(listint_t **list)
         {
             (*temp_to_replace) = (*temp_list);
             (*temp_list) = (*temp_list)->next;
-            (*temp_list)->next = temp_to_replace;
+            (*temp_list)->next = (*temp_to_replace);
             print_list(*list);
         }
         (*temp_list) = (*temp_list)->next;
