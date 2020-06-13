@@ -12,7 +12,7 @@ void insertion_sort_list(listint_t **list)
 
     while (list != NULL)
     {
-        if ((*list)->n < (*list)->next->n)
+        if ((*list)->n > (*list)->next->n)
         {
             temp_int = (*list)->n;
             (*list)->n = (*list)->next->n;
