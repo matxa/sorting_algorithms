@@ -13,7 +13,7 @@ void insertion_sort_list(listint_t **list)
 
     while ((*list)->next != NULL)
     {
-        if ((*temp_list)->n > (*temp_list)->next->n) && (*temp_list)->prev->n) < (*temp_list)->n)
+        if ((*temp_list)->n > (*temp_list)->next->n && (*temp_list)->prev->n < (*temp_list)->n)
         {
             (*temp_to_replace) = (*temp_list);
             (*temp_list) = (*temp_list)->next;
