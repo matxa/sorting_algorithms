@@ -8,17 +8,18 @@
 
 void insertion_sort_list(listint_t **list)
 {
-    int temp_int;
+    listint_t **temp_list = list;
+    listint_t **temp_to_replace;
 
-    while (list != NULL)
+    while (list->next != NULL)
     {
-        if ((*list)->n > (*list)->next->n)
+        if ((*temp_list)->n > (*temp_list)->next->n) && (*temp_list)->prev->n) < (*temp_list)->n)
         {
-            temp_int = (*list)->n;
-            (*list)->n = (*list)->next->n;
-            (*list)->next->n = temp_int;
+            (*temp_to_replace) = (*temp_list);
+            (*temp_list) = (*temp_list)->next;
+            (*temp_list)->next = (*temp_to_replace);
             print_list(*list);
         }
-        (*list) = (*list)->next;
+        (*temp_list) = (*temp_list)->next;
     }
 }
