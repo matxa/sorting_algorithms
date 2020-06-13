@@ -8,19 +8,19 @@
 
 void insertion_sort_list(listint_t **list)
 {
-    listint_t current_int = list->n;
-    listint_t temp_next_int = list->next->n;
-    listint_t temp_int;
+    temp_head = list;
+    const int temp_int;
 
 
     while (list != NULL)
     {
-        if (current_int < temp_next_int)
+        if (temp_head->n < temp_head->next->n)
         {
-            temp_int = current_int;
-            current_int = temp_next_int;
-            temp_next_int = temp_int;
+            temp_int = temp_head->n;
+            temp_head->n = temp_head->next->n;
+            temp_head->next->n = temp_int;
             print_list(*list);
         }
+        temp_head = temp_head->next;
     }
 }
