@@ -9,10 +9,10 @@
 
 void selection_sort(int *array, size_t size)
 {
-	int a;
-	int b;
-	int min;
-	int temp;
+	size_t a;
+	size_t b;
+	size_t min;
+	size_t temp;
 
 	if (size > 1)
 	{
