@@ -22,7 +22,6 @@ void insertion_sort_list(listint_t **list)
             n2->prev=(*n1)->prev;
             (*n1)->prev=n2;
             n2->next=(*n1);
-            print_list(*list);
         }
         (*n1) = (*n1)->next;
     }
