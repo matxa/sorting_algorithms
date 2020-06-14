@@ -24,5 +24,6 @@ void insertion_sort_list(listint_t **list)
             n2->next=(*n1);
         }
         (*n1) = (*n1)->next;
+        break;
     }
 }
