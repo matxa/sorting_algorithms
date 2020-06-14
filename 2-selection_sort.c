@@ -24,12 +24,6 @@ void selection_sort(int *array, size_t size)
 				if (array[b] < array[min])
 					min = b;
 			}
-			if (min != a)
-			{
-				temp = array[a];
-				array[a] = min;
-				min = temp;
-			}
 		}
 	}
 }
