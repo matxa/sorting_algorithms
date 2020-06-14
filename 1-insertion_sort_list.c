@@ -9,17 +9,21 @@
 void insertion_sort_list(listint_t **list)
 {
     listint_t **temp_list = list;
-    listint_t **temp_to_replace = NULL;
+    listint_t **n1 = (*temp_list);
+    listint_t **n2 = (*temp_list->next);
 
     while ((*list)->next != NULL)
     {
         if ((*temp_list)->n > (*temp_list)->next->n)
         {
-            (*temp_to_replace) = (*temp_list);
-            (*temp_list) = (*temp_list)->next;
-            (*temp_list)->next = (*temp_to_replace);
+            n1->prev->next=n2;
+            n2->next->prev=n1;
+            n1->next=n2->next;
+            n2->prev=n1->prev;
+            n1->prev=n2;
+            n2->next=n1;
             print_list(*list);
         }
-        (*temp_list) = (*temp_list)->next;
+        n1 = n1->next;
     }
 }
