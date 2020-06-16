@@ -58,10 +58,7 @@ int partition(int *array, int low, int high)
 
 void swap(int *a, int *b)
 {
-    int temp = *a;
-
+    int t = *a;
     *a = *b;
-    *b = temp;
-
-    printf("temp = %d\n", temp);
+    *b = t; 
 }
