@@ -12,9 +12,7 @@ void quick_sort(int *array, size_t size)
     int low = array[0];
     int high = array[size - 1];
 
-    printf("low - %d\n", low);
-    printf("high - %d\n", high);
-    printf("size - %lu\n", size);
+    quick_sort_helper(array, low, high);
 
 }
 
