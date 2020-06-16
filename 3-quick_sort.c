@@ -12,7 +12,8 @@ void quick_sort(int *array, size_t size)
     size_t low = array[0];
     size_t high = array[size];
     int Lomuto_partition;
-    int array_2[high - low + 1];
+    int s_2 = high - low + 1;
+    int array_2[s_2];
     int top = -1;
 
     array_2[++top] = low;
@@ -22,9 +23,9 @@ void quick_sort(int *array, size_t size)
         high = array_2[top--];
         low = array_2[top--];
 
-        Lomuto_partition = partition(arr, low, high);
+        Lomuto_partition = partition(array, low, high);
 
-        if (Lomuto_partition - 1 > low) { 
+        if (Lomuto_partition - 1 > low) {
             array_2[++top] = low;
             array_2[++top] = Lomuto_partition - 1;
         }
@@ -43,7 +44,7 @@ void quick_sort(int *array, size_t size)
 * Return: a + 1
 */
 
-size_t partition(int *array, size_t low, size_t high)
+int partition(int *array, size_t low, size_t high)
 {
     size_t pivot = array[high];
     size_t a = (low - 1);
