@@ -10,10 +10,11 @@
 void quick_sort(int *array, size_t size)
 {
     int low = array[0];
-    int high = array[size];
+    int high = array[size - 1];
 
     printf("low - %d\n", low);
-    printf("high - %d\n", size);
+    printf("high - %d\n", high);
+    printf("size - %d\n", size);
 
 }
 
