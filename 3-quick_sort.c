@@ -13,7 +13,7 @@ void quick_sort(int *array, size_t size)
     int high = array[size];
     int Lomuto_partition;
     int s_2 = high - low + 1;
-    int array_2[s_2];
+    int *array_2 = malloc(sizeof(int) * s_2);
     int top = -1;
 
     array_2[++top] = low;
