@@ -14,7 +14,7 @@ void quick_sort(int *array, size_t size)
 
     printf("low - %d\n", low);
     printf("high - %d\n", high);
-    printf("size - %d\n", size);
+    printf("size - %lu\n", size);
 
 }
 
