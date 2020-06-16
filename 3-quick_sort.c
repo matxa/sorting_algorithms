@@ -18,9 +18,9 @@ void quick_sort(int *array, size_t size)
 
 void quick_sort_helper(int *array, int low, int high, size_t size)
 {
-    print_array(array, size);
     int Lomuto_partition;
 
+    print_array(array, size);
     if (low < high)
     {
         Lomuto_partition = partition(array, low, high);
