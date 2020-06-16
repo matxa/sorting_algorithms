@@ -12,15 +12,15 @@ void quick_sort(int *array, size_t size)
     int low = array[0];
     int high = array[size - 1];
 
-    quick_sort_helper(array, low, high);
+    quick_sort_helper(array, low, high, size);
 
 }
 
-void quick_sort_helper(int *array, int low, int high)
+void quick_sort_helper(int *array, int low, int high, size_t size)
 {
     if (low < high)
     {
-        int Lomuto_partition = partition(array, low, high);
+        int Lomuto_partition = partition(array, low, high, size);
 
         quick_sort_helper(array, low, Lomuto_partition - 1);
         quick_sort_helper(array, Lomuto_partition + 1, high);
@@ -36,7 +36,7 @@ void quick_sort_helper(int *array, int low, int high)
 * Return: a + 1
 */
 
-int partition(int *array, int low, int high)
+int partition(int *array, int low, int high, size_t size)
 {
     int pivot = array[high];
     int a = low - 1;
