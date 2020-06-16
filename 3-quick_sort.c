@@ -49,14 +49,14 @@ int partition(int *array, int low, int high)
         if (array[b] < pivot)
         {
             a++;
-            swap(&array[a], &array[b])
+            swap(&array[a], &array[b]);
         }
     }
-    swap(&array[a + 1], &array[high])
+    swap(&array[a + 1], &array[high]);
     return (a + 1);
 }
 
-void swap(int* a, int* b)
+void swap(int *a, int *b)
 {
     int temp
     temp = *a;
