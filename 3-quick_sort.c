@@ -9,8 +9,8 @@
 
 void quick_sort(int *array, size_t size)
 {
-    size_t low = array[0];
-    size_t high = array[size];
+    int low = array[0];
+    int high = array[size];
     int Lomuto_partition;
     int s_2 = high - low + 1;
     int array_2[s_2];
