@@ -25,13 +25,15 @@ void quick_sort(int *array, size_t size)
 
         Lomuto_partition = partition(array, low, high);
 
-        if (Lomuto_partition - 1 < low) {
+        if (Lomuto_partition - 1 > low) {
             array_2[++top] = low;
             array_2[++top] = Lomuto_partition - 1;
+            print_array(array, size);
         }
-        if (Lomuto_partition + 1 > high) {
+        if (Lomuto_partition + 1 < high) {
             array_2[++top] = Lomuto_partition + 1;
             array_2[++top] = high;
+            print_array(array, size);
         }
     }
 }
