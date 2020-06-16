@@ -42,7 +42,6 @@ int partition(int *array, int low, int high)
     int pivot = array[high];
     int a = low - 1;
     int b;
-    int temp;
 
     for (b = low; b <= high - 1; b++)
     {
@@ -58,7 +57,8 @@ int partition(int *array, int low, int high)
 
 void swap(int *a, int *b)
 {
-    int t = *a;
+    int temp = *a;
+
     *a = *b;
-    *b = t; 
+    *b = temp;
 }
