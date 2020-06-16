@@ -18,12 +18,14 @@ void quick_sort(int *array, size_t size)
 
 void quick_sort_helper(int *array, int low, int high)
 {
-    int Lomuto_partition;
+    if (low < high)
+    {
+        int Lomuto_partition = partition(array, low, high);
 
-    Lomuto_partition = partition(array, low, high);
-
-    quick_sort_helper(array, low, Lomuto_partition - 1);
-    quick_sort_helper(array, Lomuto_partition + 1, high);
+        quick_sort_helper(array, low, Lomuto_partition - 1);
+        quick_sort_helper(array, Lomuto_partition + 1, high);
+        printf("in if (low < high)");
+    }
 }
 
 /**
