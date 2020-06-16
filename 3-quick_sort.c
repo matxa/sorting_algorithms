@@ -20,7 +20,7 @@ void quick_sort_helper(int *array, int low, int high, size_t size)
 {
     if (low < high)
     {
-        int Lomuto_partition = partition(array, low, high, size);
+        int Lomuto_partition = partition(array, low, high);
 
         print_array(array, size);
         quick_sort_helper(array, low, Lomuto_partition - 1, size);
@@ -36,13 +36,12 @@ void quick_sort_helper(int *array, int low, int high, size_t size)
 * Return: a + 1
 */
 
-int partition(int *array, int low, int high, size_t size)
+int partition(int *array, int low, int high)
 {
     int pivot = array[high];
     int a = low - 1;
     int b;
 
-    printf("ignoring size %lu\n", size);
     for (b = low; b <= high - 1; b++)
     {
         if (array[b] < pivot)
