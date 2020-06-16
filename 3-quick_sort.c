@@ -24,9 +24,10 @@ void quick_sort_helper(int *array, int low, int high, size_t size)
     {
         Lomuto_partition = partition(array, low, high);
 
-        quick_sort_helper(array, low, Lomuto_partition - 1, size);
-        quick_sort_helper(array, Lomuto_partition + 1, high, size);
         print_array(array, size);
+        quick_sort_helper(array, low, Lomuto_partition - 1, size);
+        print_array(array, size);
+        quick_sort_helper(array, Lomuto_partition + 1, high, size);
     }
 }
 
