@@ -62,4 +62,6 @@ void swap(int *a, int *b)
 
     *a = *b;
     *b = temp;
+
+    printf("temp = %d\n", temp);
 }
