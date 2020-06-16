@@ -44,12 +44,12 @@ void quick_sort(int *array, size_t size)
 * Return: a + 1
 */
 
-int partition(int *array, size_t low, size_t high)
+int partition(int *array, int low, int high)
 {
     int pivot = array[high];
-    size_t a = (low - 1);
+    int a = (low - 1);
     int b;
-    size_t temp;
+    int temp;
 
     for (b = low; b <= high - 1; b++)
     {
