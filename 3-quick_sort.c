@@ -55,7 +55,7 @@ int partition(int *array, int low, int high)
         }
     }
     temp = array[a + 1];
-    array[a + 1] = array[b];
-    array[b] = temp;
+    array[a + 1] = array[high];
+    array[high] = temp;
     return (a + 1);
 }
