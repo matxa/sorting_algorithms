@@ -40,13 +40,13 @@ void quick_sort_helper(int *array, int low, int high)
 int partition(int *array, int low, int high)
 {
     int pivot = array[high];
-    int a = (low - 1);
+    int a = low - 1;
     int b;
     int temp;
 
     for (b = low; b <= high - 1; b++)
     {
-        if (array[b] <= pivot)
+        if (array[b] < pivot)
         {
             a++;
             temp = array[a];
