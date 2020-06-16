@@ -20,6 +20,7 @@ void quick_sort_helper(int *array, int low, int high, size_t size)
 {
     int Lomuto_partition;
 
+    print_array(array, size);
     if (low < high)
     {
         Lomuto_partition = partition(array, low, high);
