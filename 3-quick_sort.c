@@ -13,7 +13,7 @@ void quick_sort(int *array, size_t size)
     int high = array[size];
 
     printf("low - %d\n", low);
-    printf("high - %d\n", high);
+    printf("high - %d\n", size);
 
 }
 
