@@ -18,14 +18,14 @@ void insertion_sort_list(listint_t **list)
     {
         while (list_h->prev && list_h->n < list_h->prev->n)
         {
-            insertion_sort_helper(*list, list_h);
+            insertion_sort_helper(list, list_h);
             print_list(list_h);
         }
         list_h = list_h->next;
     }
 }
 
-void insertion_sort_helper(listint_t *list, listint_t *list_h)
+void insertion_sort_helper(listint_t **list, listint_t *list_h)
 {
     list_h->prev->next = list_h->prev;
     if (list_h->next != NULL)
