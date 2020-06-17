@@ -18,25 +18,20 @@ void insertion_sort_list(listint_t **list)
     {
         while (list_h->prev && list_h->n < list_h->prev->n)
         {
-            insertion_sort_helper(list, list_h);
+            list_h->prev->next = list_h->prev;
+            if (list_h->next != NULL)
+                list_h->next->prev = list_h->prev;
+
+            list_h->next = list_h->prev;
+            list_h->prev = list_h->prev->prev;
+            list_h->next->prev = list_h;
+
+            if (list_h->prev == NULL)
+                *list == list_h;
+            else
+                list_h->prev->next = list_h;
             print_list(list_h);
         }
         list_h = list_h->next;
     }
-}
-
-void insertion_sort_helper(listint_t **list, listint_t *list_h)
-{
-    list_h->prev->next = list_h->prev;
-    if (list_h->next != NULL)
-        list_h->next->prev = list_h->prev;
-
-    list_h->next = list_h->prev;
-    list_h->prev = list_h->prev->prev;
-    list_h->next->prev = list_h;
-
-    if (list_h->prev == NULL)
-        *list == list_h;
-    else
-        list_h->prev->next = list_h;
 }
