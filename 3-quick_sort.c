@@ -58,10 +58,11 @@ int partition(int *array, int low, int high, size_t size)
 		{
 			a++;
 			swap(&array[a], &array[b]);
+            print_array(array, size);
 		}
 	}
 	swap(&array[a + 1], &array[high]);
-	print_array(array, size);
+    print_array(array, size);
 	return (a + 1);
 }
 
