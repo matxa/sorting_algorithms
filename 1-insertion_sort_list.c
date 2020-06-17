@@ -13,12 +13,13 @@ void insertion_sort_list(listint_t **list)
 
     while (left)
     {
-            if (left->n > right->n)
-            {
-                print_list(*list);
-            }
-    left = left->next;
-    right = right->next;
+        if (left->n > right->n)
+        {
+            print_list(*list);
+        }
+
+        left = left->next;
+        right = right->next;
     }
 
 }
