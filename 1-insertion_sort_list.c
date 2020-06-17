@@ -26,7 +26,7 @@ void insertion_sort_list(listint_t **list)
 
 void insertion_sort_help(listint_t **list_h, listint_t *node_to_insert)
 {
-    listint_t current;
+    listint_t *temp;
 
     if (*list_h == NULL)
         *list_h = node_to_insert;
@@ -39,15 +39,15 @@ void insertion_sort_help(listint_t **list_h, listint_t *node_to_insert)
     }
     else
     {
-        current = *list_h;
-        while (current->next != NULL && current->next->n < node_to_insert->n)
-            current = current->next;
+        temp = *list_h;
+        while (temp->next != NULL && temp->next->n < node_to_insert->n)
+            temp = temp->next;
 
-        node_to_insert->next = current->next;
-        if (current->next != NULL)
+        node_to_insert->next = temp->next;
+        if (temp->next != NULL)
             node_to_insert->next->prev = node_to_insert;
 
-        current->next = node_to_insert;
-        node_to_insert->prev = current;
+        temp->next = node_to_insert;
+        node_to_insert->prev = temp;
     }
 }
