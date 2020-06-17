@@ -60,8 +60,8 @@ int partition(int *array, int low, int high, size_t size)
 			if (a != b)
 			{
 				swap(&array[a], &array[b]);
-				print_array(array, size);
 			}
+            print_array(array, size);
 		}
 	}
 	if (array[high] < array[a + 1])
