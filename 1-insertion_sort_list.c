@@ -27,7 +27,7 @@ void insertion_sort_list(listint_t **list)
             list_h->next->prev = list_h;
 
             print_list(list_h);
-            list_h->prev = list_hlist_h->next;
+            list_h->prev = list_h->next;
         }
         list_h = list_h->next;
     }
