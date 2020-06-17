@@ -23,7 +23,7 @@ void insertion_sort_help(listint_t **list_h, listint_t *node_to_insert);
 void selection_sort(int *array, size_t size);
 void quick_sort(int *array, size_t size);
 int partition(int *array, int low, int high, size_t size);
-void insertion_sort_helper(listint_t *list_h);
+void insertion_sort_helper(listint_t **list, listint_t *list_h);
 void swap(int *a, int *b);
 void print_array(const int *array, size_t size);
 void print_list(const listint_t *list);
