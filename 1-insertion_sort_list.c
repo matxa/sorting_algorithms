@@ -8,26 +8,43 @@
 
 void insertion_sort_list(listint_t **list)
 {
-    listint_t **temp_list = list;
+    listint_t *list_h = NULL;
+    listint_t *temp = *list;
+    listint_t *next;
 
-    while ((*temp_list))
+    while (temp)
     {
-        if ((*temp_list)->n > (*temp_list)->next->n)
-        {
-            (*temp_list)->prev->next = (*temp_list)->next;
-            (*temp_list)->next->prev = (*temp_list)->prev;
-            (*temp_list)->next = (*temp_list)->prev;
+        next = temp->next;
+        temp->prev = temp->next = NULL;
 
-            (*temp_list)->next->prev->next = (*temp_list)->next->next;
-            (*temp_list)->next->next->prev = (*temp_list)->next->prev;
-            (*temp_list)->next->next = (*temp_list)->next->prev;
+        insertion_sort_help(list_h, temp);
+        print_list(list);
+        temp = next;
+    }
+}
 
-            (*temp_list)->prev = (*temp_list)->next->prev;
-            (*temp_list)->next->prev = (*temp_list)->next;
+void insertion_sort_help(listint_t **list_h, listint_t node_to_insert)
+{
+    listint_t current;
 
-            (*temp_list)->next = (*temp_list)->prev;
-            (*temp_list)->next->next = (*temp_list)->next->prev;
-        }
-        (*temp_list) = (*temp_list)->next;
+    if (*list_h == NULL)
+        *list_h = node_to_insert;
+    else if ((*list_h)->data >= node_to_insert->data)
+    {
+        node_to_insert->next = *list_h;
+        node_to_insert->next->prev = node_to_insert;
+        *list_h = node_to_insert;
+    }
+    else
+    {
+        current = *list_h;
+        while (current->next != NULL &&
+               current->next->data < node_to_insert->data)
+            current = current->next;
+        node_to_insert->next = current->next;
+        if (current->next != NULL)
+            node_to_insert->next->prev = node_to_insert;
+        current->next = node_to_insert;
+        node_to_insert->prev = current;
     }
 }
