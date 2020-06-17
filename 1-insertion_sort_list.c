@@ -11,17 +11,14 @@ void insertion_sort_list(listint_t **list)
     listint_t *left = *list;
     listint_t *right = (*list)->next;
 
-    while (left)
+    while (left && right)
     {
-        while (right)
-        {
             if (left->n > right->n)
             {
                 print_list(*list);
             }
-            right = right->next;
-        }
-        left = left->next;
+    left = left->next;
+    right = right->next;
     }
 
 }
