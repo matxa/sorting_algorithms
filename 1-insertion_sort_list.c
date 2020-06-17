@@ -19,6 +19,8 @@ void insertion_sort_list(listint_t **list)
         while (list_h->prev && list_h->n < list_h->prev->n)
         {
             insertion_sort_helper(list_h);
+    
+            list_h->prev->next = list_h;
             print_list(list_h);
         }
         list_h = list_h->next;
