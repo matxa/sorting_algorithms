@@ -18,8 +18,8 @@ void insertion_sort_list(listint_t **list)
             print_list(*list);
         }
 
-        right = right->next;
-        if (right)
+        left = left->next;
+        if (right->next != NULL)
             right = right->next;
     }
 
