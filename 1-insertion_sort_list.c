@@ -16,14 +16,20 @@ void insertion_sort_list(listint_t **list)
     {
         if ((*temp_list)->n > (*temp_list)->next->n)
         {
-            (*n1)->prev->next=n2;
-            n2->next->prev=(*n1);
-            (*n1)->next=n2->next;
-            n2->prev=(*n1)->prev;
-            (*n1)->prev=n2;
-            n2->next=(*n1);
+            (*temp_list)->prev->next = (*temp_list)->next;
+            (*temp_list)->next->prev = (*temp_list)->prev;
+            (*temp_list)->next = (*temp_list)->prev;
+
+            (*temp_list)->next->prev->next = (*temp_list)->next->next;
+            (*temp_list)->next->next->prev = (*temp_list)->next->prev;
+            (*temp_list)->next->next = (*temp_list)->next->prev;
+
+            (*temp_list)->prev = (*temp_list)->next->prev;
+            (*temp_list)->next->prev = (*temp_list)->next;
+
+            (*temp_list)->next = (*temp_list)->prev;
+            (*temp_list)->next->next = (*temp_list)->next->prev;
         }
-        (*n1) = (*n1)->next;
-        break;
+        (*temp_list) = (*temp_list)->next;
     }
 }
