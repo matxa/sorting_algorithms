@@ -15,7 +15,8 @@ void insertion_sort_list(listint_t **list)
     while (temp)
     {
         next = temp->next;
-        temp->prev = temp->next = NULL;
+        temp->prev = temp->next;
+        temp->next = NULL;
 
         insertion_sort_help(list_h, temp);
         print_list(list);
@@ -29,6 +30,7 @@ void insertion_sort_help(listint_t **list_h, listint_t node_to_insert)
 
     if (*list_h == NULL)
         *list_h = node_to_insert;
+
     else if ((*list_h)->data >= node_to_insert->data)
     {
         node_to_insert->next = *list_h;
