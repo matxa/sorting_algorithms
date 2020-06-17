@@ -18,9 +18,9 @@ void insertion_sort_list(listint_t **list)
             print_list(*list);
         }
 
-        if (left->next != NULL)
-            left = left->next;
         right = right->next;
+        if (right->next != NULL)
+            right = right->next;
     }
 
 }
