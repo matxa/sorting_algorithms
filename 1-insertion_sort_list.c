@@ -20,7 +20,7 @@ void insertion_sort_list(listint_t **list)
         {
             insertion_sort_helper(list_h);
             if (list_h->prev == NULL)
-                *list == list_h;
+                list == list_h;
             else
                 list_h->prev->next = list_h;
             print_list(list_h);
