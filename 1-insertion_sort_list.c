@@ -18,8 +18,8 @@ void insertion_sort_list(listint_t **list)
         temp->prev = temp->next;
         temp->next = NULL;
 
-        insertion_sort_help(list_h, temp);
-        print_list(list);
+        insertion_sort_help(&list_h, temp);
+        print_list(*list);
         temp = next;
     }
 }
