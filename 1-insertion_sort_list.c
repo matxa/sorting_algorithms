@@ -21,7 +21,7 @@ void insertion_sort_list(listint_t **list)
     }
 }
 
-void insertion_sort_help(listint_t **list_h, listint_t node_to_insert)
+void insertion_sort_help(listint_t **list_h, listint_t *node_to_insert)
 {
     listint_t *temp;
     if (*list_h == NULL)
