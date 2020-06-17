@@ -32,7 +32,7 @@ void insertion_sort_help(listint_t **list_h, listint_t *node_to_insert)
         print_list(*list_h);
     }
 
-    if ((*list_h)->n >= node_to_insert->n)
+    if ((*list_h)->n >= node_to_insert->n && *list_h != NULL)
     {
         node_to_insert->next = *list_h;
         node_to_insert->next->prev = node_to_insert;
