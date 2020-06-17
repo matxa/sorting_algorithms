@@ -49,6 +49,6 @@ void insertion_sort_help(listint_t **list_h, listint_t *node_to_insert)
             node_to_insert->next->prev = node_to_insert;
         temp->next = node_to_insert;
         node_to_insert->prev = temp;
+        print_list(*list_h);
     }
-    print_list(*list_h);
 }
