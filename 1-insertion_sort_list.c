@@ -38,12 +38,13 @@ void insertion_sort_help(listint_t **list_h, listint_t node_to_insert)
     else
     {
         current = *list_h;
-        while (current->next != NULL &&
-               current->next->data < node_to_insert->data)
+        while (current->next != NULL && current->next->data < node_to_insert->data)
             current = current->next;
+
         node_to_insert->next = current->next;
         if (current->next != NULL)
             node_to_insert->next->prev = node_to_insert;
+
         current->next = node_to_insert;
         node_to_insert->prev = current;
     }
