@@ -10,14 +10,16 @@ void insertion_sort_list(listint_t **list)
 {
     listint_t *temp = *list;
     listint_t *next;
+    listint_t *list_h = NULL;
 
     while (temp)
     {
         next = temp->next;
         temp->prev = temp->next = NULL;
-        insertion_sort_help(list, temp);
-        temp = next->next;
+        insertion_sort_help(&list_h, temp);
+        temp = next;
     }
+    *list = list_h;
 }
 
 void insertion_sort_help(listint_t **list_h, listint_t *node_to_insert)
