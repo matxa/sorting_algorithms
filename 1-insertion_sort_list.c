@@ -19,7 +19,7 @@ void insertion_sort_list(listint_t **list)
         }
 
         right = right->next;
-        if (right->next != NULL)
+        if (right)
             right = right->next;
     }
 
