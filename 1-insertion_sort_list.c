@@ -15,8 +15,7 @@ void insertion_sort_list(listint_t **list)
     while (temp)
     {
         next = temp->next;
-        temp->prev = temp->next;
-        temp->next = NULL;
+        temp->prev = temp->next = NULL;
 
         insertion_sort_help(&list_h, temp);
         temp = next;
