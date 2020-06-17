@@ -8,7 +8,6 @@
 
 void insertion_sort_list(listint_t **list)
 {
-    listint_t *list_h = NULL;
     listint_t *temp = *list;
     listint_t *next;
 
@@ -16,7 +15,7 @@ void insertion_sort_list(listint_t **list)
     {
         next = temp->next;
         temp->prev = temp->next = NULL;
-        insertion_sort_help(*list_h, temp);
+        insertion_sort_help(*list, temp);
         temp = next;
     }
 }
@@ -44,5 +43,5 @@ void insertion_sort_help(listint_t **list_h, listint_t *node_to_insert)
         temp->next = node_to_insert;
         node_to_insert->prev = temp;
     }
-    print_list(list_h);
+    print_list(*list_h);
 }
