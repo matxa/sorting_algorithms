@@ -21,6 +21,7 @@ void insertion_sort_list(listint_t **list)
         insertion_sort_help(&list_h, temp);
         temp = next;
     }
+    print_list(*list_h);
 }
 
 void insertion_sort_help(listint_t **list_h, listint_t *node_to_insert)
@@ -48,6 +49,5 @@ void insertion_sort_help(listint_t **list_h, listint_t *node_to_insert)
 
         temp->next = node_to_insert;
         node_to_insert->prev = temp;
-        print_list(*list_h);
     }
 }
