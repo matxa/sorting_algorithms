@@ -25,7 +25,7 @@ void insertion_sort_list(listint_t **list)
     }
 }
 
-void insertion_sort_helper(listint_t *node_to_move)
+void insertion_sort_helper(listint_t **node_to_move)
 {
     list_h->prev->next = list_h->prev;
     if (list_h->next != NULL)
