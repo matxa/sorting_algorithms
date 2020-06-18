@@ -16,7 +16,7 @@ void insertion_sort_list(listint_t **list)
 	{
         left = node->prev;
         right = node;
-        while (right->prev && right->n < prev->n)
+        while (right->prev && right->n < left->n)
         {
             node = swap_two_nodes(left, right, list);
             print_list(*list);
