@@ -16,15 +16,14 @@ void insertion_sort_list(listint_t **list)
 	{
         left = node->prev;
         right = node;
-		if (left->n > right->n)
-		{
-			node = swap_two_nodes(left, right, list);
-			print_list(*list);
-		}
-
+        while (right->prev && right->n < prev->n)
+        {
+            node = swap_two_nodes(left, right, list);
+            print_list(*list);
+            left = right->prev;
+        }
+		node = node->next;
         left = left->next;
-		if (right->next != NULL)
-			right = right->next;
 	}
 }
 
