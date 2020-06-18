@@ -13,7 +13,7 @@ void insertion_sort_list(listint_t **list)
 
 	while (left)
 	{
-		if (left->n > right->n)
+		if (left->n < right->n)
 		{
 			swap_two_nodes(left, right);
 			print_list(*list);
