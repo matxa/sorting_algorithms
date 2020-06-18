@@ -15,7 +15,7 @@ void insertion_sort_list(listint_t **list)
     {
         if (left->n > right->n)
         {
-            insertion_sort_help(list, right);
+            insertion_sort_help(list, left);
             print_list(*list);
         }
 
