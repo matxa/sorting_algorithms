@@ -19,10 +19,10 @@ void insertion_sort_list(listint_t **list)
 			print_list(*list);
 		}
 
+        left = left->next;
 		if (right->next != NULL)
 			right = right->next;
 	}
-
 }
 
 listint_t *swap_two_nodes(listint_t *n_1, listint_t *n_2)
