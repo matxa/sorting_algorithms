@@ -8,14 +8,15 @@
 
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *left = *list;
-	listint_t *right = (*list)->next;
+	listint_t *left;
+	listint_t *right;
+	listint_t *node = (*list)->next;
 
-	while (left)
+	while (node)
 	{
 		if (left->n > right->n)
 		{
-			swap_two_nodes(left, right);
+			node = swap_two_nodes(left, right, list);
 			print_list(*list);
 		}
 
@@ -25,31 +26,19 @@ void insertion_sort_list(listint_t **list)
 	}
 }
 
-listint_t *swap_two_nodes(listint_t *n_1, listint_t *n_2)
+listint_t *swap_two_nodes(listint_t *n_1, listint_t *n_2, listint_t **list)
 {
-	listint_t *temp;
-
-	temp = n_1->next;
+    if (n_1->prev)
+		(n_1->prev)->next = n_2;
+	else
+		*list = n_2, n_2->prev = NULL;
+	if ((n_2->next))
+		(n_2->next)->prev = n_1;
+	n_2->prev = n_1->prev;
+	n_1->prev = n_2;
 	n_1->next = n_2->next;
-	n_2->next = temp;
-
-	if (n_1->next != NULL)
-		n_1->next->prev = n_1;
-
-	if (n_2->next != NULL)
-		n_2->next->prev = n_2;
-
-	temp = n_1->prev;
-	n_1->prev = n_2->prev;
-	n_2->prev = temp;
-	if (n_1->prev != NULL)
-		n_1->prev->next = n_1;
-
-	if (n_2->prev == NULL)
-		return n_2;
-
-	n_2->prev->next = n_2;
-	return n_1;
+	n_2->next = n_1;
+	return (n_1);
 }
 void insertion_sort_help(listint_t **list_h, listint_t *node_to_insert)
 {
