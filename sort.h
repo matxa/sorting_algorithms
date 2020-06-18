@@ -20,7 +20,7 @@ typedef struct listint_s
 void bubble_sort(int *array, size_t size);
 void insertion_sort_list(listint_t **list);
 void insertion_sort_help(listint_t **list_h, listint_t *node_to_insert);
-void swap_two_nodes(listint_t *n_1, listint_t *n_2);
+listint_t *swap_two_nodes(listint_t *n_1, listint_t *n_2);
 void selection_sort(int *array, size_t size);
 void quick_sort(int *array, size_t size);
 int partition(int *array, int low, int high, size_t size);

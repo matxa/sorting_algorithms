@@ -15,18 +15,17 @@ void insertion_sort_list(listint_t **list)
 	{
 		if (left->n > right->n)
 		{
-			swap_two_nodes(right, left);
+			left = insertion_sort_help(list, left);
 			print_list(*list);
 		}
 
-		left = left->next;
 		if (right->next != NULL)
 			right = right->next;
 	}
 
 }
 
-void swap_two_nodes(listint_t *n_1, listint_t *n_2)
+listint_t *swap_two_nodes(listint_t *n_1, listint_t *n_2)
 {
 	listint_t *temp;
 
@@ -47,9 +46,10 @@ void swap_two_nodes(listint_t *n_1, listint_t *n_2)
 		n_1->prev->next = n_1;
 
 	if (n_2->prev == NULL)
-		return;
+		return n_2;
 
 	n_2->prev->next = n_2;
+	return n_1;
 }
 void insertion_sort_help(listint_t **list_h, listint_t *node_to_insert)
 {
