@@ -20,6 +20,8 @@ void insertion_sort_list(listint_t **list)
         {
             node = swap_two_nodes(left, right, list);
             print_list(*list);
+            if (right->next == NULL)
+                break;
             left = right->prev;
         }
 		node = node->next;
