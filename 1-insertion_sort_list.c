@@ -8,6 +8,9 @@
 
 void insertion_sort_list(listint_t **list)
 {
+	if (list == NULL)
+		return;
+
 	listint_t *left;
 	listint_t *right;
 	listint_t *node = (*list)->next;
